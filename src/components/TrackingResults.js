@@ -1,13 +1,20 @@
 import React from "react";
 
 import Card from "./ui/Card";
+import TrackingResultItem from "./TrackingResultItem";
 
 import classes from "./TrackingResults.module.css";
 
-function TrackingResults() {
+function TrackingResults({ items }) {
   return (
     <Card className={classes.card}>
-      <div>Tracking Results</div>;
+      {items.map((item) => {
+        return (
+          <li>
+            <TrackingResultItem heading={item.heading} value={item.value} />
+          </li>
+        );
+      })}
     </Card>
   );
 }
