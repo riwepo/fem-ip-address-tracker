@@ -1,5 +1,7 @@
 import React from "react";
 
+import LeafletMap from "./LeafletMap";
+
 import patternBgMobile from "../images/pattern-bg-mobile.png";
 
 import classes from "./Background.module.css";
@@ -12,7 +14,7 @@ function Background() {
         src={patternBgMobile}
         alt="background pattern"
       />
-      <div className={classes.map}></div>
+      <LeafletMap />
     </div>
   );
 }
