@@ -1,18 +1,18 @@
 .foregroundContainer {
   width: 90%;
   z-index: 10;
-  margin: 2rem auto 2rem auto;
+  margin: 1rem auto 1rem auto;
 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: stretch;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .heading {
   align-self: center;
   color: var(--white-color);
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 700;
 }
