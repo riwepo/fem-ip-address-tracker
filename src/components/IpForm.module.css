@@ -17,7 +17,16 @@
   height: 100%;
   width: 5rem;
   border: none;
-
-  /* for some reason this doesn't work */
   background-color: var(--very-dark-grey-color);
+}
+
+.button:hover,
+.button:active {
+  background-color: var(--light-grey-color);
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--light-grey-color);
+  cursor: default;
 }
