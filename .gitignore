@@ -21,4 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-geo_api_key.txt
+src/geolocation/geolocation_key.js
