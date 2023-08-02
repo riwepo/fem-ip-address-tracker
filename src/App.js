@@ -2,16 +2,16 @@ import React from "react";
 
 import Background from "./components/Background";
 import IpForm from "./components/IpForm";
+import TrackingResults from "./components/TrackingResults";
 
 import classes from "./App.module.css";
-import TrackingResults from "./components/TrackingResults";
 
 function App() {
   return (
     <main>
       <>
         <div className={classes.foregroundContainer}>
-          <h1>IP Address Tracker</h1>
+          <h1 className={classes.heading}>IP Address Tracker</h1>
           <IpForm />
           <TrackingResults />
         </div>
