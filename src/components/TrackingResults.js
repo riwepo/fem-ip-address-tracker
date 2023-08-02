@@ -11,7 +11,7 @@ function TrackingResults({ items }) {
       <ul className={classes.list}>
         {items.map((item) => {
           return (
-            <li>
+            <li key={item.heading}>
               <TrackingResultItem heading={item.heading} value={item.value} />
             </li>
           );
