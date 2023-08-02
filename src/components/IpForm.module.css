@@ -1,0 +1,19 @@
+.form {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+
+  /* for some reason this doesn't work */
+  /* background-color: var(--very-dark-grey-color); */
+  background-color: blue;
+  /* background-color: black; */
+  color: var(--white-color);
+}
