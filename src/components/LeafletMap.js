@@ -10,6 +10,14 @@ import { Icon } from "leaflet";
 import "./LeafletMap.css";
 
 function LeafletMap({ center }) {
+  const icon = new Icon({
+    iconUrl: process.env.PUBLIC_URL + "/images/icon-location.svg",
+    iconSize: [50, 50],
+    iconAnchor: [25, 50],
+  });
+
+  console.log(icon);
+
   return (
     <MapContainer
       center={center}
@@ -21,6 +29,7 @@ function LeafletMap({ center }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
+      <Marker position={center} icon={icon} />
     </MapContainer>
   );
 }
