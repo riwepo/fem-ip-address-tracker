@@ -1,0 +1,7 @@
+.heading {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--light-grey-color);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}

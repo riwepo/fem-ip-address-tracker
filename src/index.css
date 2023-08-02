@@ -13,6 +13,7 @@ body {
 }
 
 :root {
+  --light-grey-color: hsl(0, 0%, 70%);
   --very-dark-grey-color: hsl(0, 0, 17%);
   --dark-grey-color: hsl(0, 0, 59%);
   --white-color: white;

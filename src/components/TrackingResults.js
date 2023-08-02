@@ -8,13 +8,15 @@ import classes from "./TrackingResults.module.css";
 function TrackingResults({ items }) {
   return (
     <Card className={classes.card}>
-      {items.map((item) => {
-        return (
-          <li>
-            <TrackingResultItem heading={item.heading} value={item.value} />
-          </li>
-        );
-      })}
+      <ul className={classes.list}>
+        {items.map((item) => {
+          return (
+            <li>
+              <TrackingResultItem heading={item.heading} value={item.value} />
+            </li>
+          );
+        })}
+      </ul>
     </Card>
   );
 }
