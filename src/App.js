@@ -13,7 +13,7 @@ function App() {
     { heading: "Timezone", value: "timezone" },
     { heading: "ISP", value: "isp" },
   ];
-  const goldCoastLatLong = [-28.0, 153.4];
+  const homeLatLong = [-28.026, 153.428];
   return (
     <main>
       <>
@@ -22,7 +22,7 @@ function App() {
           <IpForm />
           <TrackingResults items={dummyTrackingResults} />
         </div>
-        <Background center={goldCoastLatLong} />
+        <Background center={homeLatLong} />
       </>
     </main>
   );
