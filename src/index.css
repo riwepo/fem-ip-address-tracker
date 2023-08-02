@@ -11,3 +11,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --very-dark-grey-color: hsl(0, 0, 17%);
+  --dark-grey-color: hsl(0, 0, 59%);
+}
