@@ -10,7 +10,10 @@ function IpForm() {
   return (
     <Card className={classes.card}>
       <form className={classes.form}>
-        <input />
+        <input
+          className={classes.input}
+          placeholder="Search for any IP address or domain"
+        />
         <button title="submit" className={classes.button}>
           <img src={iconArrow} alt="arrow" />
         </button>

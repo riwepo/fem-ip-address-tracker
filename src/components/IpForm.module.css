@@ -1,19 +1,23 @@
 .form {
-  /* display: flex;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between; */
+  justify-content: space-between;
   position: relative;
+}
+
+.input {
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  width: 80%;
 }
 
 .button {
   position: absolute;
   top: 0;
   right: 0;
+  height: 100%;
+  width: 5rem;
   border: none;
 
   /* for some reason this doesn't work */
-  /* background-color: var(--very-dark-grey-color); */
-  background-color: blue;
-  /* background-color: black; */
-  color: var(--white-color);
+  background-color: var(--very-dark-grey-color);
 }
