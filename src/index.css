@@ -15,4 +15,5 @@ body {
 :root {
   --very-dark-grey-color: hsl(0, 0, 17%);
   --dark-grey-color: hsl(0, 0, 59%);
+  --white-color: white;
 }
