@@ -9,10 +9,10 @@ import { Icon } from "leaflet";
 // instead we use a simple pure CSS file
 import "./LeafletMap.css";
 
-function LeafletMap() {
+function LeafletMap({ center }) {
   return (
     <MapContainer
-      center={[-28.0, 153.4]}
+      center={center}
       zoom={12}
       scrollWheelZoom={false}
       className="leaflet-container"

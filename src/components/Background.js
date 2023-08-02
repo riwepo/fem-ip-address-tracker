@@ -6,7 +6,7 @@ import patternBgMobile from "../images/pattern-bg-mobile.png";
 
 import classes from "./Background.module.css";
 
-function Background() {
+function Background({ center }) {
   return (
     <div className={classes.container}>
       <img
@@ -14,7 +14,7 @@ function Background() {
         src={patternBgMobile}
         alt="background pattern"
       />
-      <LeafletMap />
+      <LeafletMap center={center} />
     </div>
   );
 }
