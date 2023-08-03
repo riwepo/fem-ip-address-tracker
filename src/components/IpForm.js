@@ -6,22 +6,35 @@ import iconArrow from "../images/icon-arrow.svg";
 
 import classes from "./IpForm.module.css";
 
-function IpForm({ onSubmit }) {
-  const [enteredIp, setEnteredIp] = useState("");
-  const [isValid, setIsValid] = useState(false);
+const broadbeachLibrary = "123.103.192.10";
 
-  const submitHandler = async (event) => {
-    const broadbeachLibrary = "123.103.192.10";
+function IpForm({ onSubmit }) {
+  const [enteredIp, setEnteredIp] = useState(broadbeachLibrary);
+  const [isValid, setIsValid] = useState(true);
+
+  const submitHandler = (event) => {
     event.preventDefault();
-    // const localIp = event.target.value;
-    const localIp = broadbeachLibrary;
+    if (isValid) onSubmit(enteredIp);
+  };
+
+  const ipChangeHandler = (event) => {
+    const localIp = event.target.value;
+    setEnteredIp(localIp);
     if (localIp === "") {
       setIsValid(false);
       return;
     }
-    setEnteredIp(localIp);
-    onSubmit(localIp);
+    if (!validateIPaddress(localIp)) {
+      setIsValid(false);
+      return;
+    }
   };
+
+  function validateIPaddress(ipAddress) {
+    var ipformat =
+      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    return ipAddress.match(ipformat);
+  }
 
   return (
     <Card className={classes.card}>
@@ -29,8 +42,10 @@ function IpForm({ onSubmit }) {
         <input
           className={classes.input}
           placeholder="Search for any IP address or domain"
+          onChange={ipChangeHandler}
+          value={enteredIp}
         />
-        <button title="submit" className={classes.button}>
+        <button title="submit" className={classes.button} disabled={!isValid}>
           <img src={iconArrow} alt="arrow" />
         </button>
       </form>
