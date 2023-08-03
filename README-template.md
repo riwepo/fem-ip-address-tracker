@@ -70,6 +70,9 @@ https://www.copycat.dev/blog/react-leaflet/
 
 Adding custom icon to map
 
+flyTo
+https://medium.com/sopra-steria-norge/react-leaflet-a-short-intro-with-animations-4fa8f8c5eb1c
+
 acknowledge function to validate ip
 https://stackoverflow.com/questions/38965455/try-to-validate-ip-address-with-javascript
 
