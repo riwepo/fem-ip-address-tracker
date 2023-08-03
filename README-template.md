@@ -79,6 +79,8 @@ https://stackoverflow.com/questions/38965455/try-to-validate-ip-address-with-jav
 learned to use srcSet not srcset in picture/source element
 https://stackoverflow.com/questions/34695899/why-is-react-js-removing-the-srcset-tag-on-img/34695900#34695900
 
+I styled first component in list differently by using map with index and passing index to the component and using conditional css styles
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
