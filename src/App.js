@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Background from "./components/Background";
 import IpForm from "./components/IpForm";
@@ -21,12 +21,24 @@ function App() {
   const [latLong, setLatLong] = useState(homeLatLong);
 
   const ipSubmitHandler = async (enteredIp) => {
-    const geoResult = await getCity(enteredIp);
+    await asyncUpdateCity(enteredIp);
+  };
+
+  const asyncUpdateCity = async (ipAddress) => {
+    const geoResult = await getCity(ipAddress);
     const trackingResults = convertGeoResult(geoResult);
     setTrackingResults(trackingResults);
     const geoLatLong = getLatLong(geoResult);
     setLatLong(geoLatLong);
   };
+
+  const updateCity = () => {
+    asyncUpdateCity(null);
+  };
+
+  // update city on first load with null ip
+  // will use ip of request to show our ip
+  useEffect(updateCity, []);
 
   function convertGeoResult(geoResult) {
     const formatLocation = (location) => {
