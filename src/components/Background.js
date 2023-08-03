@@ -11,7 +11,7 @@ function Background({ center }) {
   return (
     <div className={classes.container}>
       <picture className={classes.picture}>
-        <source srcset={patternBgDesktop} media="(min-width: 768px)" />
+        <source srcSet={patternBgDesktop} media="(min-width: 768px)" />
         <img
           className={classes.img}
           src={patternBgMobile}
