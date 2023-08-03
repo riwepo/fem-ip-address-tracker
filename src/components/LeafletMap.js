@@ -19,6 +19,7 @@ function LeafletMap({ center }) {
       center={center}
       zoom={12}
       scrollWheelZoom={false}
+      zoo
       className="leaflet-container"
     >
       <TileLayer
@@ -34,6 +35,7 @@ function LeafletMap({ center }) {
 // this little component controls the map
 function LeafletMapController({ targetCenter }) {
   const map = useMap();
+  map.removeControl(map.zoomControl);
   map.flyTo(targetCenter);
   return null;
 }
