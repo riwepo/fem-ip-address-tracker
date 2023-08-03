@@ -2,24 +2,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
 }
 
 .input {
   margin: 0.5rem 1rem 0.5rem 1rem;
-  width: 60%;
+  width: 20rem;
   border: none;
   font-size: 1rem;
 }
 
 .button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 5rem;
   border: none;
   background-color: var(--very-dark-grey-color);
+  padding: 0 1rem 0 1rem;
 }
 
 .button:hover,

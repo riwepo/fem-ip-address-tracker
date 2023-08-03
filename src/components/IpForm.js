@@ -35,6 +35,7 @@ function IpForm({ onSubmit }) {
     <Card className={classes.card}>
       <form className={classes.form} onSubmit={submitHandler}>
         <input
+          type="text"
           className={classes.input}
           placeholder="Search for any IP address or domain"
           onChange={ipChangeHandler}
