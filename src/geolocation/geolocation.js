@@ -6,6 +6,10 @@ import API_KEY from "./geolocation_key";
 const API_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=";
 
 const buildUrl = (ipAddress) => {
+  if (ipAddress == null) {
+    const url = `${API_URL}${API_KEY}`;
+    return url;
+  }
   const url = `${API_URL}${API_KEY}&ipAddress=${ipAddress}`;
   return url;
 };
