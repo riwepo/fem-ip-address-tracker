@@ -7,13 +7,14 @@ import { Icon } from "leaflet";
 // instead we use a simple pure CSS file
 import "./LeafletMap.css";
 
-function LeafletMap({ center }) {
-  const icon = new Icon({
-    iconUrl: process.env.PUBLIC_URL + "/images/icon-location.svg",
-    iconSize: [50, 50],
-    iconAnchor: [25, 50],
-  });
+const icon = new Icon({
+  iconUrl: process.env.PUBLIC_URL + "/images/icon-location.svg",
+  iconSize: [50, 50],
+  iconAnchor: [25, 50],
+});
 
+function LeafletMap({ center }) {
+  console.log("LeafletMap", center);
   return (
     <MapContainer
       center={center}
