@@ -19,7 +19,6 @@ function LeafletMap({ center }) {
       center={center}
       zoom={12}
       scrollWheelZoom={false}
-      zoo
       className="leaflet-container"
     >
       <TileLayer
