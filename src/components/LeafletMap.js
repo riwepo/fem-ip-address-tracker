@@ -14,8 +14,6 @@ const icon = new Icon({
 });
 
 function LeafletMap({ center }) {
-  console.log("LeafletMap", center);
-
   return (
     <MapContainer
       center={center}
