@@ -70,6 +70,9 @@ https://www.copycat.dev/blog/react-leaflet/
 
 Adding custom icon to map
 
+acknowledge function to validate ip
+https://stackoverflow.com/questions/38965455/try-to-validate-ip-address-with-javascript
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
