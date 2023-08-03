@@ -5,9 +5,7 @@
 }
 
 .separator {
-  border-left: 1px solid var(--light-grey-color);
-  height: 3rem;
-  margin-right: 2rem;
+  display: none;
 }
 
 .contentContainer {
@@ -31,4 +29,14 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--very-dark-grey-color);
+}
+
+/* media query for desktop */
+@media (min-width: 768px) {
+  .separator {
+    display: block;
+    border-left: 1px solid var(--light-grey-color);
+    height: 3rem;
+    margin-right: 2rem;
+  }
 }
