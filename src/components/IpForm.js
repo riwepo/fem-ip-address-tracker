@@ -6,10 +6,8 @@ import iconArrow from "../images/icon-arrow.svg";
 
 import classes from "./IpForm.module.css";
 
-const broadbeachLibrary = "123.103.192.10";
-
 function IpForm({ onSubmit }) {
-  const [enteredIp, setEnteredIp] = useState(broadbeachLibrary);
+  const [enteredIp, setEnteredIp] = useState("");
   const [isValid, setIsValid] = useState(true);
 
   const submitHandler = (event) => {
