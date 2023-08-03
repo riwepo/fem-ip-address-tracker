@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
 
 // note the Leaflet library is hardcoded to render into a div with class 'leaflet-container'
@@ -15,6 +15,7 @@ const icon = new Icon({
 
 function LeafletMap({ center }) {
   console.log("LeafletMap", center);
+
   return (
     <MapContainer
       center={center}
@@ -27,8 +28,16 @@ function LeafletMap({ center }) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={center} icon={icon} />
+      <LeafletMapController targetCenter={center} />
     </MapContainer>
   );
+}
+
+// this little component controls the map
+function LeafletMapController({ targetCenter }) {
+  const map = useMap();
+  map.flyTo(targetCenter);
+  return null;
 }
 
 export default LeafletMap;
