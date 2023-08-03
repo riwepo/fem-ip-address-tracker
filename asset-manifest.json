@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/fem-ip-address-tracker/static/css/main.95262e89.css",
-    "main.js": "/fem-ip-address-tracker/static/js/main.dbaa1136.js",
+    "main.css": "/fem-ip-address-tracker/static/css/main.c7487f95.css",
+    "main.js": "/fem-ip-address-tracker/static/js/main.54aa096f.js",
     "static/js/787.ed04cdd6.chunk.js": "/fem-ip-address-tracker/static/js/787.ed04cdd6.chunk.js",
+    "static/media/pattern-bg-desktop.png": "/fem-ip-address-tracker/static/media/pattern-bg-desktop.5013c4f570ecf757f855.png",
     "static/media/pattern-bg-mobile.png": "/fem-ip-address-tracker/static/media/pattern-bg-mobile.3666aa38dccbc0ebd679.png",
     "index.html": "/fem-ip-address-tracker/index.html",
     "static/media/icon-arrow.svg": "/fem-ip-address-tracker/static/media/icon-arrow.2eaaa5ee3602d5aa14a2dba69e9fb7a0.svg",
-    "main.95262e89.css.map": "/fem-ip-address-tracker/static/css/main.95262e89.css.map",
-    "main.dbaa1136.js.map": "/fem-ip-address-tracker/static/js/main.dbaa1136.js.map",
+    "main.c7487f95.css.map": "/fem-ip-address-tracker/static/css/main.c7487f95.css.map",
+    "main.54aa096f.js.map": "/fem-ip-address-tracker/static/js/main.54aa096f.js.map",
     "787.ed04cdd6.chunk.js.map": "/fem-ip-address-tracker/static/js/787.ed04cdd6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95262e89.css",
-    "static/js/main.dbaa1136.js"
+    "static/css/main.c7487f95.css",
+    "static/js/main.54aa096f.js"
   ]
 }
