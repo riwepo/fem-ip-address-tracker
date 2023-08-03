@@ -9,10 +9,14 @@ function TrackingResults({ items }) {
   return (
     <Card className={classes.card}>
       <ul className={classes.list}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <li key={item.heading}>
-              <TrackingResultItem heading={item.heading} value={item.value} />
+              <TrackingResultItem
+                index={index}
+                heading={item.heading}
+                value={item.value}
+              />
             </li>
           );
         })}
