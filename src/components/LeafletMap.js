@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-// import "./App.css";
+import React from "react";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { Icon } from "leaflet";
-// import * as parkData from "./data/skateboard-parks.json";
 
 // note the Leaflet library is hardcoded to render into a div with class 'leaflet-container'
 // so we can't use CSS Modules
@@ -15,8 +13,6 @@ function LeafletMap({ center }) {
     iconSize: [50, 50],
     iconAnchor: [25, 50],
   });
-
-  console.log(icon);
 
   return (
     <MapContainer
