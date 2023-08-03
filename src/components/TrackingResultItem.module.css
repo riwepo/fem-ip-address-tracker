@@ -39,4 +39,8 @@
     height: 3rem;
     margin-right: 2rem;
   }
+
+  .first .separator {
+    display: none;
+  }
 }
