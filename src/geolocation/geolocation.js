@@ -7,10 +7,11 @@ const API_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=";
 
 const buildUrl = (ipAddress) => {
   const url = `${API_URL}${API_KEY}&ipAddress=${ipAddress}`;
-  console.log(url);
   return url;
 };
 
+// calls geo.ipify API
+// returns value or error wrapped in an object
 export async function getCity(ipAddress) {
   const url = buildUrl(ipAddress);
   try {
@@ -21,7 +22,6 @@ export async function getCity(ipAddress) {
       );
     }
     const geoResult = await response.json();
-    console.log("geoResult", geoResult);
     const result = { isOk: true, value: geoResult };
     return result;
   } catch (error) {
