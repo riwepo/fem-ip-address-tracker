@@ -3,7 +3,7 @@ import API_KEY from "./geolocation_key";
 // sample URL
 // https://geo.ipify.org/api/v2/country,city?apiKey=at_nwvlYhYKNuZ10ltmgl29dJTZ5ZUWq&ipAddress=8.8.8.8
 
-const API_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=xx";
+const API_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=";
 
 const buildUrl = (ipAddress) => {
   const url = `${API_URL}${API_KEY}&ipAddress=${ipAddress}`;
@@ -20,8 +20,11 @@ export async function getCity(ipAddress) {
         `geolocation request failed with error: ${response.status}`
       );
     }
-    console.log("response", response);
+    const geoResult = await response.json();
+    console.log("geoResult", geoResult);
+    const result = { isOk: true, value: geoResult };
+    return result;
   } catch (error) {
-    console.log(error.message);
+    return { isOk: false, error: error.message };
   }
 }
