@@ -14,15 +14,19 @@ const dummyTrackingResults = [
   { heading: "Timezone", value: "timezone" },
   { heading: "ISP", value: "isp" },
 ];
+const homeLatLong = [-28.026, 153.428];
 
 function App() {
   const [trackingResults, setTrackingResults] = useState(dummyTrackingResults);
+  const [latLong, setLatLong] = useState(homeLatLong);
 
-  const homeLatLong = [-28.026, 153.428];
   const ipSubmitHandler = async (enteredIp) => {
     const geoResult = await getCity(enteredIp);
+    console.log(geoResult);
     const trackingResults = convertGeoResult(geoResult);
     setTrackingResults(trackingResults);
+    const geoLatLong = getLatLong(geoResult);
+    setLatLong(geoLatLong);
   };
 
   function convertGeoResult(geoResult) {
@@ -45,6 +49,15 @@ function App() {
     return trackingResults;
   }
 
+  function getLatLong(geoResult) {
+    const latLong = [
+      geoResult.value.location.lat,
+      geoResult.value.location.lng,
+    ];
+    console.log(latLong);
+    return latLong;
+  }
+
   return (
     <main>
       <>
@@ -53,7 +66,7 @@ function App() {
           <IpForm onSubmit={ipSubmitHandler} />
           <TrackingResults items={trackingResults} />
         </div>
-        <Background center={homeLatLong} />
+        <Background center={latLong} />
       </>
     </main>
   );
