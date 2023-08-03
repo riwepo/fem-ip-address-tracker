@@ -32,7 +32,7 @@ function IpForm({ onSubmit }) {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card className={"none"}>
       <form className={classes.form} onSubmit={submitHandler}>
         <input
           type="text"
