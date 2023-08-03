@@ -16,3 +16,10 @@
   font-size: 1rem;
   font-weight: 700;
 }
+
+/* media query for desktop */
+@media (min-width: 768px) {
+  .foregroundContainer {
+    align-items: center;
+  }
+}
