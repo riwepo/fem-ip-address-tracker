@@ -24,10 +24,7 @@ function IpForm({ onSubmit }) {
       setIsValid(false);
       return;
     }
-    if (!validateIPaddress(localIp)) {
-      setIsValid(false);
-      return;
-    }
+    setIsValid(validateIPaddress(localIp));
   };
 
   function validateIPaddress(ipAddress) {
