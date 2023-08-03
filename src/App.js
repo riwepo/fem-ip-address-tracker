@@ -22,7 +22,6 @@ function App() {
 
   const ipSubmitHandler = async (enteredIp) => {
     const geoResult = await getCity(enteredIp);
-    console.log(geoResult);
     const trackingResults = convertGeoResult(geoResult);
     setTrackingResults(trackingResults);
     const geoLatLong = getLatLong(geoResult);
@@ -54,7 +53,6 @@ function App() {
       geoResult.value.location.lat,
       geoResult.value.location.lng,
     ];
-    console.log(latLong);
     return latLong;
   }
 
