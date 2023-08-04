@@ -81,6 +81,8 @@ https://stackoverflow.com/questions/34695899/why-is-react-js-removing-the-srcset
 
 I styled first component in list differently by using map with index and passing index to the component and using conditional css styles
 
+I found ho to include api key in project by adding it to a very simple JS module not commited to source control
+
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
