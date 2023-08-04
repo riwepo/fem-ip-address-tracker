@@ -5,19 +5,38 @@ import API_KEY from "./geolocation_key";
 
 const API_URL = "https://geo.ipify.org/api/v2/country,city?apiKey=";
 
-const buildUrl = (ipAddress) => {
-  if (ipAddress == null) {
-    const url = `${API_URL}${API_KEY}`;
-    return url;
-  }
+const buildIpUrl = (ipAddress) => {
   const url = `${API_URL}${API_KEY}&ipAddress=${ipAddress}`;
   return url;
 };
 
-// calls geo.ipify API
+const buildRequestIpUrl = () => {
+  const url = `${API_URL}${API_KEY}`;
+  return url;
+};
+
+// calls geo.ipify API with specified ip address
+// finds geo location data including city for that ip
 // returns value or error wrapped in an object
-export async function getCity(ipAddress) {
-  const url = buildUrl(ipAddress);
+export async function getCityForIp(ipAddress) {
+  const url = buildIpUrl(ipAddress);
+  const result = getCity(url);
+  return result;
+}
+
+// calls geo.ipify API with no ip address
+// finds geo location data including city for the request ip
+// returns value or error wrapped in an object
+export function getCityForRequestIp() {
+  const url = buildRequestIpUrl();
+  const result = getCity(url);
+  return result;
+}
+
+// calls geo.ipify API at given URL
+// returns value or error wrapped in an object
+export async function getCity(url) {
+  let result;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -26,9 +45,10 @@ export async function getCity(ipAddress) {
       );
     }
     const geoResult = await response.json();
-    const result = { isOk: true, value: geoResult };
+    result = { isOk: true, value: geoResult };
     return result;
   } catch (error) {
-    return { isOk: false, error: error.message };
+    result = { isOk: false, error: error.message };
+    return result;
   }
 }

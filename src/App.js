@@ -4,7 +4,7 @@ import Background from "./components/Background";
 import IpForm from "./components/IpForm";
 import TrackingResults from "./components/TrackingResults";
 
-import { getCity } from "./geolocation/geolocation";
+import { getCityForRequestIp, getCityForIp } from "./geolocation/geolocation";
 
 import classes from "./App.module.css";
 
@@ -23,11 +23,17 @@ function App() {
   const [latLong, setLatLong] = useState(delautLatLong);
 
   const ipSubmitHandler = async (enteredIp) => {
-    await asyncUpdateCity(enteredIp);
+    await asyncUpdateCity({ useRequestAddress: false, ipAddress: enteredIp });
   };
 
-  const asyncUpdateCity = async (ipAddress) => {
-    const geoResult = await getCity(ipAddress);
+  const asyncUpdateCity = async ({ ipAddress, useRequestAddress }) => {
+    let geoResult;
+    if (useRequestAddress) {
+      geoResult = await getCityForRequestIp();
+    } else {
+      geoResult = await getCityForIp(ipAddress);
+    }
+
     let localTrackingResults;
     if (geoResult.isOk) {
       localTrackingResults = convertGeoResult(geoResult);
@@ -40,7 +46,7 @@ function App() {
   };
 
   const updateCity = () => {
-    asyncUpdateCity(null);
+    asyncUpdateCity({ useRequestAddress: true, ipAddress: null });
   };
 
   // update city on first load with null ip
