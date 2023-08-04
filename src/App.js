@@ -8,17 +8,19 @@ import { getCity } from "./geolocation/geolocation";
 
 import classes from "./App.module.css";
 
-const dummyTrackingResults = [
-  { heading: "IP Address", value: "ipaddress" },
-  { heading: "Location", value: "location" },
-  { heading: "Timezone", value: "timezone" },
-  { heading: "ISP", value: "isp" },
+const defaultTrackingResults = [
+  { heading: "IP Address", value: "--" },
+  { heading: "Location", value: "--" },
+  { heading: "Timezone", value: "--" },
+  { heading: "ISP", value: "--" },
 ];
-const homeLatLong = [-28.026, 153.428];
+const delautLatLong = [0, 0];
 
 function App() {
-  const [trackingResults, setTrackingResults] = useState(dummyTrackingResults);
-  const [latLong, setLatLong] = useState(homeLatLong);
+  const [trackingResults, setTrackingResults] = useState(
+    defaultTrackingResults
+  );
+  const [latLong, setLatLong] = useState(delautLatLong);
 
   const ipSubmitHandler = async (enteredIp) => {
     await asyncUpdateCity(enteredIp);
